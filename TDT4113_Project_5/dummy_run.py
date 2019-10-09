@@ -48,7 +48,7 @@ class DummyLEDBoard:
         :param k: number of seconds (int)
         """
 
-        print(f'Lighting all LEDs for {k} seconds')
+        print('Lighting all LEDs for',k, 'seconds')
 
     def twinkle_all_leds(self, k):
         """
@@ -57,7 +57,7 @@ class DummyLEDBoard:
         :param k: number of seconds (int)
         """
 
-        print(f'Twinkling all LEDs for {k} seconds')
+        print(f'Twinkling all LEDs for', k, 'seconds')
 
     def power_up(self):
         """Executes the power up lighting sequence"""
