@@ -39,7 +39,7 @@ class DummyLEDBoard:
         :param k: number of seconds (int)
         """
 
-        print(f'Lighting {id} for {k} seconds')
+        print('Lighting', id, 'for', k, 'seconds')
 
     def flash_all_leds(self, k):
         """
