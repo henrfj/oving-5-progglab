@@ -73,9 +73,9 @@ class Keypad:
         x = returnvalue[0]
         y = returnvalue[1]
 
-        print(self.layout[x][y])
+        print("X: ", x, "Y: ", y)
+        print("SIGNAL: ", self.layout[x][y])
         return self.layout[x][y]
         
 
         # TODO: we only get the columns not rows when we press
-        # TODO: We havent implemented time delay (while loop)
