@@ -35,17 +35,14 @@ class Keypad:
         pressed.
         """
         
-        row = 0
-        col = 0
-
-        for rp in self.row_pins:
+        
+        for row, rp in enumerate(self.row_pins):
             GPIO.output(rp, GPIO.HIGH)
-            for cp in self.col_pins:
+            for col, cp in enumerate(self.col_pins):
                 if GPIO.input(cp) == GPIO.HIGH:
                     return (row, col)
-                col += 1
             GPIO.output(rp, GPIO.LOW)
-            row += 1
+    
 
         return -1
 
