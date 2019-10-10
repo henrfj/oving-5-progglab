@@ -13,6 +13,7 @@ class Keypad:
     def __init__(self):
         """Setup Keypad pins"""
         GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
         self.row_pins = [18, 23, 24, 25]
         self.col_pins = [17, 27, 22]
         
@@ -60,6 +61,7 @@ class Keypad:
             
             while count < 20:
                 # Makeing sure to return a stable reading
+                print("stable?")
                 coord = self.do_polling()
                 if coord == prev_coord:
                     count += 1

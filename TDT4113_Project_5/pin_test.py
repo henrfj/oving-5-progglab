@@ -16,3 +16,6 @@ while test_pin != -1:
     GPIO.output(test_pin,GPIO.LOW)
     time.sleep(1)
 
+
+
+# ALL relevant pins and T-cobbler are tested and are working. 
