@@ -66,3 +66,4 @@ class Rule:
 
         self.action(agent, signal)
         return self.state2
+

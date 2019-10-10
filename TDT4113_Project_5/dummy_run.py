@@ -1,6 +1,7 @@
 from rule import Rule, match_numeric_signal, match_signal_0_5, match_any_signal
 from fsm import FSM
 from kpc_agent import KPCAgent
+from keypad import Keypad
 
 START_STATE = 'start_state'
 END_STATE = 'end_state'
@@ -172,7 +173,7 @@ def run():
         Rule('twinkle_all_lights', 'logged_in', '*', KPCAgent.twinkle_leds)
     ]
 
-    keypad = DummyKeypad()
+    keypad = Keypad()
     ledboard = DummyLEDBoard()
     agent = KPCAgent(keypad, ledboard)
     fsm = FSM(rules, agent, START_STATE, END_STATE)
