@@ -58,5 +58,5 @@ class Keypad:
         if coord != -1:
             print(layout[coord[0]][coord[1]])
             return layout[coord[0]][coord[1]]
-        return -1 
+        return 'p'  # is always not a match of any rule
 
