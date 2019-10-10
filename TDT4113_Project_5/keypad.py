@@ -62,19 +62,21 @@ class Keypad:
             while count < 20:
                 # Makeing sure to return a stable reading
                 coord = self.do_polling()
-                if coord == prev_coord or prev_coord == -1:
+                if coord == prev_coord:
                     count += 1
-                    prev_coord = coord
+                    
                 else:
                     count = 0
+
+                prev_coord = coord
                 time.sleep(0.010)
+                
             returnvalue = coord
 
         x = returnvalue[0]
         y = returnvalue[1]
 
         print("X: ", x, "Y: ", y)
-        print("SIGNAL: ", self.layout[x][y])
         return self.layout[x][y]
         
 
