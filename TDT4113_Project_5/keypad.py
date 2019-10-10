@@ -31,7 +31,7 @@ class Keypad:
 
     def do_polling(self):
         """
-        Poll the physical keypad and return which key is being pressed as a string. Return None if no key is being
+        Poll the physical keypad and return which key is being pressed as a string. Return -1 if no key is being
         pressed.
         """
         
@@ -43,7 +43,6 @@ class Keypad:
                     return (row, col)
             GPIO.output(rp, GPIO.LOW)
     
-
         return -1
 
     def get_next_signal(self):
@@ -54,20 +53,20 @@ class Keypad:
         
         returnvalue = -1
         while returnvalue == -1:
-            
+            # Making sure we dont return an inactive reading
             count = 0
             prev_coord = -1
             coord = -1
             
             while count < 20:
+                # Makeing sure to return a stable reading
                 coord = self.do_polling()
                 if coord == prev_coord:
                     count += 1
+                    prev_coord = coord
                 else:
                     count = 0
-                prev_coord = coord
                 time.sleep(0.010)
-                
             returnvalue = coord
 
         x = returnvalue[0]
