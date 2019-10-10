@@ -75,9 +75,9 @@ class Keypad:
             returnvalue = coord
         """
         returnvalue = self.do_polling()
-        x = returnvalue[0]
-        y = returnvalue[1]
-        
+        x = int(returnvalue[0])
+        y = int(returnvalue[1])
+
         print("X: ", x, "Y: ", y)
         return self.layout[x][y]
         
