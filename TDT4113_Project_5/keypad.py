@@ -61,9 +61,8 @@ class Keypad:
             
             while count < 20:
                 # Makeing sure to return a stable reading
-                print("stable?")
                 coord = self.do_polling()
-                if coord == prev_coord:
+                if coord == prev_coord or prev_coord == -1:
                     count += 1
                     prev_coord = coord
                 else:
