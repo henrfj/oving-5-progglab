@@ -72,8 +72,8 @@ class Keypad:
                 prev_coord = coord
                 time.sleep(0.010)
             """
+            coord = self.do_polling()
             returnvalue = coord
-        
         
         x = returnvalue[0]
         y = returnvalue[1]
