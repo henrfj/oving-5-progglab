@@ -1,7 +1,7 @@
 """Keypad class that serves as interface between Agent object and physical keypad"""
 
 import RPi.GPIO as GPIO
-
+import time
 
 class Keypad:
 
@@ -49,11 +49,28 @@ class Keypad:
     def get_next_signal(self):
         """
         Repeatedly  poll the physical keypad until a key press is detected.
-        :return:
+        :return: one of the following chars: "0123456789*#"
         """
-        coord = self.do_polling()
-        if coord != -1:
-            print(self.layout[coord[0]][coord[1]])
-            return self.layout[coord[0]][coord[1]]
-        return 'p'  # is always not a match of any rule
+        
+        returnvalue = -1
+        while returnvalue == -1:
+            count = 0
+            prev_coord = self.do_polling() 
+            while count > 20:
+                coord = self.do_polling()
+                if coord == prev_coord:
+                    count += 1
+                else:
+                    count = 0
+                time.sleep(0.010)
+            returnvalue = coord
 
+        x = returnvalue[0]
+        y = returnvalue[1]
+
+        print(self.layout[x][y])
+        return self.layout[x][y]
+        
+
+        # TODO: we only get the columns not rows when we press
+        # TODO: We havent implemented time delay (while loop)
