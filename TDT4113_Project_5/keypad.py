@@ -56,7 +56,7 @@ class Keypad:
         """
         coord = self.do_polling()
         if coord != -1:
-            print(layout[coord[0]][coord[1]])
-            return layout[coord[0]][coord[1]]
+            print(self.layout[coord[0]][coord[1]])
+            return self.layout[coord[0]][coord[1]]
         return 'p'  # is always not a match of any rule
 
