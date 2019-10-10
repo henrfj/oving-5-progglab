@@ -19,11 +19,11 @@ class Keypad:
 
         # Output pins (ROWS)
         for rp in self.row_pins:
-            GPIO.setup(rp, GPIO.Out)
+            GPIO.setup(rp, GPIO.OUT)
     
         # Input pins (COLUMNS)
         for cp in self.col_pins:
-            GPIO.setup(cp, GPIO.In, pull_up_down=GPIO.PUD_DOWN)
+            GPIO.setup(cp, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         
         
 
