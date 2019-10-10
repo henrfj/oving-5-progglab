@@ -52,14 +52,14 @@ class Keypad:
         Repeatedly  poll the physical keypad until a key press is detected.
         :return: one of the following chars: "0123456789*#"
         """
-        """
+        
         returnvalue = -1
         while returnvalue == -1:
             # Making sure we dont return an inactive reading
+            """
             count = 0
             prev_coord = -1
             coord = -1
-            
             while count < 20:
                 # Makeing sure to return a stable reading
                 coord = self.do_polling()
@@ -71,12 +71,12 @@ class Keypad:
 
                 prev_coord = coord
                 time.sleep(0.010)
-
+            """
             returnvalue = coord
-        """
-        returnvalue = self.do_polling()
-        x = int(returnvalue[0])
-        y = int(returnvalue[1])
+        
+        
+        x = returnvalue[0]
+        y = returnvalue[1]
 
         print("X: ", x, "Y: ", y)
         return self.layout[x][y]
