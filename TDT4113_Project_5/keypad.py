@@ -54,16 +54,20 @@ class Keypad:
         
         returnvalue = -1
         while returnvalue == -1:
+            
             count = 0
             prev_coord = -1
             coord = -1
-            while count > 20:
+            
+            while count < 20:
                 coord = self.do_polling()
                 if coord == prev_coord:
                     count += 1
                 else:
                     count = 0
+                prev_coord = coord
                 time.sleep(0.010)
+                
             returnvalue = coord
 
         x = returnvalue[0]
