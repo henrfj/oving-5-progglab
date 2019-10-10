@@ -56,7 +56,7 @@ class Keypad:
         returnvalue = -1
         while returnvalue == -1:
             # Making sure we dont return an inactive reading
-            """
+            
             count = 0
             prev_coord = -1
             coord = -1
@@ -71,8 +71,8 @@ class Keypad:
 
                 prev_coord = coord
                 time.sleep(0.010)
-            """
-            coord = self.do_polling()
+            
+            
             returnvalue = coord
         
         x = returnvalue[0]
