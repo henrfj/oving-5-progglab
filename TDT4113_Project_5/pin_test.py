@@ -19,12 +19,12 @@ while test_pin != -1:
 
 print("Charlietest!")
 
-GPIO.setup(16,GPIO.OUT)
-GPIO.setup(20,GPIO.OUT)
-GPIO.setup(21, GPIO.IN
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(20, GPIO.OUT)
+GPIO.setup(21, GPIO.IN)
 
-GPIO.output(16,GPIO.HIGH)
-GPIO.output(20,GPIO.LOW)
+GPIO.output(16, GPIO.HIGH)
+GPIO.output(20, GPIO.LOW)
 
 
 print("16 is High and 20 is low, output")
