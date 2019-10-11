@@ -42,6 +42,7 @@ class Keypad:
             for col_index, cp in enumerate(self.col_pins):
                 if GPIO.input(cp) == GPIO.HIGH:
                     print("row_index:", row_index, "\trp", rp, "\tcol_index", col_index, "\tcp", cp)
+                    GPIO.output(rp, GPIO.LOW)
                     return (row_index, col_index)
             GPIO.output(rp, GPIO.LOW)
     
@@ -83,3 +84,4 @@ class Keypad:
         
 
         # TODO: we only get the columns not rows when we press
+        #       for a quick instance the row is correct, then goes back to row 0 again...
