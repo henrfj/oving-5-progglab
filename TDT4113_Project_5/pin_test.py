@@ -31,4 +31,6 @@ GPIO.output(20, GPIO.LOW)
 print("16 is High and 20 is low, output")
 print (" pin 21 is input~~Ground")
 
+input("press enter to exit")
+
 # ALL relevant pins and T-cobbler are tested and are working. 
