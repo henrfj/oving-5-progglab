@@ -6,7 +6,7 @@ GPIO.setwarnings(False)
 
 test_pin = 0
 while test_pin != -1:
-    test_pin = int(input("Enter what pin will you test: -1 for Charlietest"))
+    test_pin = int(input("Enter what pin will you test( '-1' for Charlietest): "))
     if test_pin != -1:
         print("You entered pin nr. :", test_pin)
         GPIO.setup(test_pin,GPIO.OUT)
@@ -19,18 +19,34 @@ while test_pin != -1:
 
 
 print("Charlietest!")
+pins = [16, 20, 21]
 
-GPIO.setup(16, GPIO.OUT)
-GPIO.setup(20, GPIO.OUT)
-GPIO.setup(21, GPIO.IN)
+pin_led_states = [
+  [1, 0, -1], # A
+  [0, 1, -1], # B
+  [-1, 1, 0], # C
+  [-1, 0, 1], # D
+  [1, -1, 0], # E
+  [0, -1, 1]  # F
+]
 
-GPIO.output(16, GPIO.HIGH)
-GPIO.output(20, GPIO.LOW)
+def set_pin(pin_index, pin_state):
+    if pin_state == -1:
+        GPIO.setup(pins[pin_index], GPIO.IN)
+    else:
+        GPIO.setup(pins[pin_index], GPIO.OUT)
+        GPIO.output(pins[pin_index], pin_state)
 
+def light_led(led_number):
+    for pin_index, pin_state in enumerate(pin_led_states[led_number]):
+        set_pin(pin_index, pin_state)
 
-print("16 is High and 20 is low, output")
-print (" pin 21 is input~~Ground")
+set_pin(0, -1)
+set_pin(1, -1)
+set_pin(2, -1)
 
-input("press enter to exit")
+while True:
+    x = int(input("Pin (0 to 5):"))
+    light_led(x)
 
 # ALL relevant pins and T-cobbler are tested and are working. 
