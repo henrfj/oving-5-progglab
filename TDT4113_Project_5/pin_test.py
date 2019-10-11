@@ -6,7 +6,7 @@ GPIO.setwarnings(False)
 
 test_pin = 0
 while test_pin != -1:
-    test_pin = int(input("Enter what pin will you test: "))
+    test_pin = int(input("Enter what pin will you test: -1 for Charlietest"))
     print("You entered pin nr. :", test_pin)
     GPIO.setup(test_pin,GPIO.OUT)
     print ("LED on")
@@ -17,5 +17,17 @@ while test_pin != -1:
     time.sleep(1)
 
 
+print("Charlietest!")
+
+GPIO.setup(16,GPIO.OUT)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21, GPIO.IN
+
+GPIO.output(16,GPIO.HIGH)
+GPIO.output(20,GPIO.LOW)
+
+
+print("16 is High and 20 is low, output")
+print (" pin 21 is input~~Ground")
 
 # ALL relevant pins and T-cobbler are tested and are working. 
