@@ -37,12 +37,12 @@ class Keypad:
         """
         
         
-        for row, rp in enumerate(self.row_pins):
+        for row_index, rp in enumerate(self.row_pins):
             GPIO.output(rp, GPIO.HIGH)
-            for col, cp in enumerate(self.col_pins):
+            for col_index, cp in enumerate(self.col_pins):
                 if GPIO.input(cp) == GPIO.HIGH:
-                    # print("row:", row, "\trp", rp, "\tcol", col, "\tcp", cp)
-                    return (row, col)
+                    print("row_index:", row_index, "\trp", rp, "\tcol_index", col_index, "\tcp", cp)
+                    return (row_index, col_index)
             GPIO.output(rp, GPIO.LOW)
     
         return -1
@@ -78,7 +78,7 @@ class Keypad:
         x = returnvalue[0]
         y = returnvalue[1]
 
-        print("X: ", x, "Y: ", y)
+        # print("X: ", x, "Y: ", y)
         return self.layout[x][y]
         
 
