@@ -107,6 +107,23 @@ class LEDBoard:
     def power_up(self):
         """Executes the power up lighting sequence"""
 
+        for j in range(6):
+            start_time = time.time()
+            elapsed_time = 0
+
+            while elapsed_time < 0.2:
+                
+                i = 0
+                #light a led without delay
+                self.light_led(i, 0)
+                i+=1
+                if i > j:
+                    i = 0
+                elapsed_time = time.time() - start_time
+
+        self.flash_all_leds(5)
+        self.reset_pins()
+
     def power_down(self):
         """Executes the power down lighting sequence"""
 

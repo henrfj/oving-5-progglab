@@ -22,6 +22,9 @@ while test_pin != -1:
 print("Charlietest!")
 
 ledboard = LEDBoard()
+
+print("Power up!")
+ledboard.power_up()
 print("Twinkle all lights!")
 ledboard.twinkle_all_leds(10)
 print("Flashin all lights!")
