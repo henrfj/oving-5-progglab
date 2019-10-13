@@ -48,7 +48,8 @@ set_pin(2, -1)
 x = 0
 while x in [0, 1, 2, 3, 4, 5]:
     x = int(input("Pin (0 to 5):"))
-    light_led(x)
+    if x in [0, 1, 2, 3, 4, 5]:
+        light_led(x)
 
 print("testing flash all lights")
 
