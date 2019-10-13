@@ -126,10 +126,10 @@ class LEDBoard:
     def power_down(self):
         """Executes the power down lighting sequence"""
         i = 0
-        for i in range(10):
-            self.light_led(i % 3, 1)
-        
+        for i in range(20):
+            self.light_led(i % 2, 0.3)
 
+        self.reset_pins()
 
     def success(self):
         """Executes lighting sequence indicating success"""
