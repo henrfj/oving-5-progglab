@@ -29,7 +29,7 @@ class LEDBoard:
         :param k: number of seconds (int)
         """
         
-        for pin_index, pin_state in enumerate(self.pin_led_states[led_number]):
+        for pin_index, pin_state in enumerate(self.pin_led_states[id]):
             self.set_pin(pin_index, pin_state)
         time.sleep(k)
         
