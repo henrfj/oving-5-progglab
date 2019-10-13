@@ -55,7 +55,6 @@ class LEDBoard:
 
         :param k: number of seconds (int)
         """
-        print("Flashing all lights!")
         start_time = time.time()
         elapsed_time = 0
 
