@@ -47,14 +47,34 @@ set_pin(2, -1)
 
 x = 0
 while x in [0, 1, 2, 3, 4, 5]:
-    x = int(input("Pin (0 to 5):"))
+    x = int(input("Pin (0 to 5): other input for next test"))
     if x in [0, 1, 2, 3, 4, 5]:
         light_led(x)
 
-print("testing flash all lights")
-
+set_pin(0, -1)
+set_pin(1, -1)
+set_pin(2, -1)
 
 k = 10 # Hopefully 10 sec => yes
+
+print ("Testing twinkle all lights")
+start_time = time.time()
+elapsed_time = 0
+i = 0
+
+while elapsed_time < k:
+    light_led(i%5, 0.2)
+    i += 1
+    elapsed_time = time.time() - start_time
+
+set_pin(0, -1)
+set_pin(1, -1)
+set_pin(2, -1)
+
+
+
+
+print("testing flash all lights")
 start_time = time.time()
 elapsed_time = 0
 

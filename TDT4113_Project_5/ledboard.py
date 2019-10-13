@@ -7,7 +7,7 @@ import time
 
 class LEDBoard:
 
-    pins = [16, 20, 21]
+    
     pin_led_states = [
           [1, 0, -1], # A
           [0, 1, -1], # B
@@ -19,10 +19,8 @@ class LEDBoard:
     
     def __init__(self):
         """Setup LED board pins"""
-
+        self.pins = [16, 20, 21]
            
-
-
     def light_led(self, id, k):
         """
         Turns on one light in the LED board for k seconds
@@ -36,18 +34,20 @@ class LEDBoard:
         time.sleep(k)
         
         # Turns all leds off
-        self.set_pin(0, -1)
-        self.set_pin(1, -1)
-        self.set_pin(2, -1)
+        self.reset_pins()
 
     def set_pin(pin_index, pin_state):
         if pin_state == -1:
-            GPIO.setup(pins[pin_index], GPIO.IN)
+            GPIO.setup(self.pins[pin_index], GPIO.IN)
         else:
-            GPIO.setup(pins[pin_index], GPIO.OUT)
-            GPIO.output(pins[pin_index], pin_state)
+            GPIO.setup(self.pins[pin_index], GPIO.OUT)
+            GPIO.output(self.pins[pin_index], pin_state)
 
-
+    @staticmethod
+    def reset_pins():
+        self.set_pin(0, -1)
+        self.set_pin(1, -1)
+        self.set_pin(2, -1)
 
     def flash_all_leds(self, k):
         """
@@ -77,9 +77,7 @@ class LEDBoard:
                 break
 
             # Turn all lights off
-            self.set_pin(0, -1)
-            self.set_pin(1, -1)
-            self.set_pin(2, -1)
+            self.reset_pins()
 
             start_time3 = time.time()
             elapsed_time3 = 0
@@ -88,13 +86,8 @@ class LEDBoard:
 
             elapsed_time = time.time() - start_time
 
-            # In case we are cut short
-            self.set_pin(0, -1)
-            self.set_pin(1, -1)
-            self.set_pin(2, -1)
-
-
-
+        # In case we are cut short
+        self.reset_pins()
 
     def twinkle_all_leds(self, k):
         """
@@ -102,7 +95,16 @@ class LEDBoard:
         :param k: number of seconds (int)
         """
 
+        start_time = time.time()
+        elapsed_time = 0
+        i = 0
 
+        while elapsed_time < k:
+            self.light_led(i%5, 0.2)
+            i += 1
+            elapsed_time = time.time() - start_time
+
+        self.reset_pins()
 
     def power_up(self):
         """Executes the power up lighting sequence"""
