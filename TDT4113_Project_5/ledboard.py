@@ -110,10 +110,9 @@ class LEDBoard:
         for j in range(6):
             start_time = time.time()
             elapsed_time = 0
+            i = 0
 
-            while elapsed_time < 0.2:
-                
-                i = 0
+            while elapsed_time < 0.5:
                 #light a led without delay
                 self.light_led(i, 0)
                 i+=1

@@ -23,11 +23,11 @@ print("Charlietest!")
 
 ledboard = LEDBoard()
 
-print("Power up!")
+input("Power up!")
 ledboard.power_up()
-print("Twinkle all lights!")
+input("Twinkle all lights!")
 ledboard.twinkle_all_leds(10)
-print("Flashin all lights!")
+input("Flashin all lights!")
 ledboard.flash_all_leds(10)
 
 
