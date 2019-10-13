@@ -23,6 +23,8 @@ print("Charlietest!")
 
 ledboard = LEDBoard()
 
+input("Power down!")
+ledboard.power_down()
 input("Power up!")
 ledboard.power_up()
 input("Twinkle all lights!")

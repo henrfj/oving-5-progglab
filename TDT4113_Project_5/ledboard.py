@@ -112,7 +112,7 @@ class LEDBoard:
             elapsed_time = 0
             i = 0
 
-            while elapsed_time < 0.5:
+            while elapsed_time < 1:
                 #light a led without delay
                 self.light_led(i, 0)
                 i+=1
@@ -120,11 +120,16 @@ class LEDBoard:
                     i = 0
                 elapsed_time = time.time() - start_time
 
-        self.flash_all_leds(5)
+        self.flash_all_leds(3)
         self.reset_pins()
 
     def power_down(self):
         """Executes the power down lighting sequence"""
+        i = 0
+        for i in range(10):
+            self.light_led(i % 3, 1)
+        
+
 
     def success(self):
         """Executes lighting sequence indicating success"""
