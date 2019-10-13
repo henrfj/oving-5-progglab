@@ -32,6 +32,9 @@ START_STATE = 'start_state'
 END_STATE = 'end_state'
 
 
+# TODO: Search through FSM for wrong outputs (LED output) (Have seen several)
+
+
 def main():
     """Run FSM"""
 
