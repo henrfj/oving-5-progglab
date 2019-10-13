@@ -36,7 +36,7 @@ class LEDBoard:
         # Turns all leds off
         self.reset_pins()
 
-    def set_pin(pin_index, pin_state):
+    def set_pin(self, pin_index, pin_state):
         if pin_state == -1:
             GPIO.setup(self.pins[pin_index], GPIO.IN)
         else:
