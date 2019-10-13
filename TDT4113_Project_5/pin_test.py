@@ -57,7 +57,8 @@ i = 0
 while True:
     light_led(i)
     i+=1
-    if 1>5:
+    if i > 5:
         i = 0
+        
 
 
