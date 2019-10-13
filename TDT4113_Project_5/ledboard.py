@@ -57,9 +57,15 @@ class LEDBoard:
         :param k: number of seconds (int)
         """
         print("Flashing all lights!")
-
-        # TODO: test if quickly turnig all leds on and off in sequence will appear as flashing
-
+        start_time = time.time()
+        while True:
+            light_led(i)
+            i+=1
+            if i > 5:
+                i = 0
+            elapsed_time = time.time() - start_time
+            if elapsed_time > k:
+                break
 
 
 

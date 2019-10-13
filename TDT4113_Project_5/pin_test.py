@@ -53,12 +53,17 @@ while x in [0, 1, 2, 3, 4, 5]:
 
 print("testing flash all lights")
 
+
+k = 10 # Hopefully 10 sec
 i = 0
 while True:
     light_led(i)
     i+=1
     if i > 5:
         i = 0
+    elapsed_time = time.time() - start_time
+    if elapsed_time > k:        
+        break
         
 
 
