@@ -98,7 +98,7 @@ class LEDBoard:
         i = 0
 
         while elapsed_time < k:
-            self.light_led(i%5, 0.2)
+            self.light_led(i%6, 0.2)
             i += 1
             elapsed_time = time.time() - start_time
 
