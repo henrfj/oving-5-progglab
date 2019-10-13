@@ -43,8 +43,7 @@ class LEDBoard:
             GPIO.setup(self.pins[pin_index], GPIO.OUT)
             GPIO.output(self.pins[pin_index], pin_state)
 
-    @staticmethod
-    def reset_pins():
+    def reset_pins(self):
         self.set_pin(0, -1)
         self.set_pin(1, -1)
         self.set_pin(2, -1)
