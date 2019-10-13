@@ -63,7 +63,7 @@ while elapsed_time < k:
     start_time2 = time.time()
     elapsed_time2 = 0
     i = 0
-    while elapsed_time2 < 1:
+    while elapsed_time2 < 0.5:
         light_led(i)
         i+=1
         if i > 5:
@@ -81,7 +81,7 @@ while elapsed_time < k:
 
     start_time3 = time.time()
     elapsed_time3 = 0
-    while elapsed_time3 < 1:
+    while elapsed_time3 < 0.5:
         elapsed_time3 = time.time() - start_time3
 
     elapsed_time = time.time() - start_time

@@ -64,7 +64,7 @@ class LEDBoard:
             start_time2 = time.time()
             elapsed_time2 = 0
             i = 0
-            while elapsed_time2 < 1:
+            while elapsed_time2 < 0.5:
                 #light a led without delay
                 self.light_led(i, 0)
                 i+=1
@@ -83,7 +83,7 @@ class LEDBoard:
 
             start_time3 = time.time()
             elapsed_time3 = 0
-            while elapsed_time3 < 1:
+            while elapsed_time3 < 0.5:
                 elapsed_time3 = time.time() - start_time3
 
             elapsed_time = time.time() - start_time
