@@ -30,8 +30,7 @@ class LEDBoard:
         :param id: the light to be turned on (int) in 0 - 5
         :param k: number of seconds (int)
         """
-        print("Lighting one led:", id, k)
-
+        
         for pin_index, pin_state in enumerate(self.pin_led_states[led_number]):
             self.set_pin(pin_index, pin_state)
         time.sleep(k)
@@ -66,7 +65,8 @@ class LEDBoard:
             elapsed_time2 = 0
             i = 0
             while elapsed_time2 < 1:
-                light_led(i)
+                #light a led without delay
+                self.light_led(i, 0)
                 i+=1
                 if i > 5:
                     i = 0

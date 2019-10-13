@@ -75,9 +75,9 @@ while elapsed_time < k:
         break
 
     # Turn all lights off
-    self.set_pin(0, -1)
-    self.set_pin(1, -1)
-    self.set_pin(2, -1)
+    set_pin(0, -1)
+    set_pin(1, -1)
+    set_pin(2, -1)
 
     start_time3 = time.time()
     elapsed_time3 = 0
@@ -87,9 +87,9 @@ while elapsed_time < k:
     elapsed_time = time.time() - start_time
 
     # In case we are cut short
-    self.set_pin(0, -1)
-    self.set_pin(1, -1)
-    self.set_pin(2, -1)
+    set_pin(0, -1)
+    set_pin(1, -1)
+    set_pin(2, -1)
         
 
 
