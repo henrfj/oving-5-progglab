@@ -119,7 +119,7 @@ class LEDBoard:
     def success(self):
         """Executes lighting sequence indicating success"""
         i = 4
-        for i in range(20):
+        for j in range(20):
             self.light_led(i, 0.3)
             if i == 4:
                 i = 5
@@ -130,7 +130,7 @@ class LEDBoard:
 
     def failure(self):
         """Executes lighting sequence indicating failure"""
-        i = 0
+
         for i in range(20):
             self.light_led(i % 2, 0.3)
 
