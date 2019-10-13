@@ -15,7 +15,7 @@ while test_pin != -1:
         input ("press enter to turn off")
         print ("LED off")
         GPIO.output(test_pin,GPIO.LOW)
-        time.sleep(1)
+        
 
 
 print("Charlietest!")
@@ -45,8 +45,18 @@ set_pin(0, -1)
 set_pin(1, -1)
 set_pin(2, -1)
 
-while True:
+x = 0
+while x in [0, 1, 2, 3, 4, 5]:
     x = int(input("Pin (0 to 5):"))
     light_led(x)
 
-# ALL relevant pins and T-cobbler are tested and are working. 
+print("testing flash all lights")
+
+i = 0
+while True:
+    light_led(i)
+    i+=1
+    if 1>5:
+        i = 0
+
+
