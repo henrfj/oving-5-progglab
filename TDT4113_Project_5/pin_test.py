@@ -22,7 +22,10 @@ while test_pin != -1:
 print("Charlietest!")
 
 ledboard = LEDBoard()
-
+input("Success!")
+ledboard.success()
+input("Failure")
+ledboard.failure()
 input("Power down!")
 ledboard.power_down()
 input("Power up!")
