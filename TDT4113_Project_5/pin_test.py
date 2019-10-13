@@ -56,6 +56,7 @@ print("testing flash all lights")
 
 k = 10 # Hopefully 10 sec
 i = 0
+start_time = time.time()
 while True:
     light_led(i)
     i+=1
