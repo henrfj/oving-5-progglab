@@ -1,7 +1,6 @@
 """KPC Agent class for computation and high-level interaction with keypad / LED board"""
-"""test comment"""
-import os
 
+import os
 PASSWORD_PATH = 'password.txt'
 DEFAULT_PASSWORD = '1234'
 LEGAL_SYMBOLS = '0123456789'
@@ -40,7 +39,6 @@ class KPCAgent:
     def init_password_entry(self, signal):
         """Readies the agent for receiving a password"""
         self.password_buffer = ''
-        
 
     def startup_init_password_entry(self, signal):
         """Readies the agent for receiving a password right after startup"""
