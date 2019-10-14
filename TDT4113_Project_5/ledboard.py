@@ -3,8 +3,6 @@
 import RPi.GPIO as GPIO
 import time
 
-# TODO: k might actually be a string object and not an int
-
 class LEDBoard:
 
     
@@ -20,6 +18,7 @@ class LEDBoard:
     def __init__(self):
         """Setup LED board pins"""
         self.pins = [16, 20, 21]
+
            
     def light_led(self, id, k):
         """
