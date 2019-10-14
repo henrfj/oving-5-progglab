@@ -32,10 +32,6 @@ START_STATE = 'start_state'
 END_STATE = 'end_state'
 
 
-# TODO: Typing wrong password in verify login takes us via startstate to logged out state.
-# TODO: logged in -> create new password and create_new to calidate_new: power_up_lights (?) 
-
-
 def main():
     """Run FSM"""
 
