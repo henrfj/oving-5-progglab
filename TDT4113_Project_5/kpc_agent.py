@@ -40,6 +40,11 @@ class KPCAgent:
     def init_password_entry(self, signal):
         """Readies the agent for receiving a password"""
         self.password_buffer = ''
+        
+
+    def startup_init_password_entry(self, signal):
+        """Readies the agent for receiving a password right after startup"""
+        self.init_password_entry(signal)
         self.ledboard.power_up()
 
     def add_signal_to_password(self, signal):

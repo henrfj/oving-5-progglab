@@ -32,7 +32,8 @@ START_STATE = 'start_state'
 END_STATE = 'end_state'
 
 
-# TODO: Search through FSM for wrong outputs (LED output) (Have seen several)
+# TODO: Typing wrong password in verify login takes us via startstate to logged out state.
+# TODO: logged in -> create new password and create_new to calidate_new: power_up_lights (?) 
 
 
 def main():
@@ -43,7 +44,7 @@ def main():
             'start_state',
             'logged_out',
             match_any_signal,
-            KPCAgent.init_password_entry),
+            KPCAgent.startup_init_password_entry),
         Rule('logged_out', 'start_state', '#', KPCAgent.exit_action),
         Rule(
             'logged_out',
